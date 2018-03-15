@@ -4,17 +4,9 @@ public class Squirtle extends Pokemon
 {
     public Squirtle()
     {
-        String[] moves = {"Water Gun", "Growl"};
-        System.out.println("Squirtle Squirtle!");
-        setPokemonName("Squirtle");
-        setType("Water");
-        setMoves(moves);
-        setHitPoints(44);
-        setAtack(48);
-        setDefense(65);
-        setSpecialAttack(50);
-        setSpecialDefense(64);
-        setSpeed(43);
+        super(44,48, 65, 50, 64, 43, "Water", "Squirtle");
+        addMove("Water Gun");
+        System.out.println("Squirtle Squirtle");
     }
 
     public void specialAttack()

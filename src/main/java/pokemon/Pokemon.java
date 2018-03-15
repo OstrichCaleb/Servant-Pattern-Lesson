@@ -1,16 +1,31 @@
 package pokemon;
 
+import java.util.ArrayList;
+
 public abstract class Pokemon
 {
-    private String[] moves;
+    private ArrayList<String> moves;
     private int hitPoints;
-    private int atack;
+    private int attack;
     private int defense;
     private int specialAttack;
     private int specialDefense;
     private int speed;
     private String type;
     private String pokemonName;
+
+    public Pokemon(int hitPoints, int attack, int defense, int specialAttack, int specialDefense, int speed, String type, String pokemonName)
+    {
+        this.moves = new ArrayList<>();
+        this.hitPoints = hitPoints;
+        this.attack = attack;
+        this.defense = defense;
+        this.specialAttack = specialAttack;
+        this.specialDefense = specialDefense;
+        this.speed = speed;
+        this.type = type;
+        this.pokemonName = pokemonName;
+    }
 
     public String getPokemonName()
     {
@@ -22,14 +37,9 @@ public abstract class Pokemon
         this.pokemonName = pokemonName;
     }
 
-    public String[] getMoves()
+    public ArrayList<String> getMoves()
     {
         return moves;
-    }
-
-    public void setMoves(String[] moves)
-    {
-        this.moves = moves;
     }
 
     public int getHitPoints()
@@ -42,14 +52,14 @@ public abstract class Pokemon
         this.hitPoints = hitPoints;
     }
 
-    public int getAtack()
+    public int getAttack()
     {
-        return atack;
+        return attack;
     }
 
-    public void setAtack(int atack)
+    public void setAttack(int attack)
     {
-        this.atack = atack;
+        this.attack = attack;
     }
 
     public int getDefense()
@@ -105,6 +115,11 @@ public abstract class Pokemon
     public void growl()
     {
         System.out.println("Your " + pokemonName + " growled!");
+    }
+
+    public void addMove(String move)
+    {
+        this.moves.add(move);
     }
 
     public abstract void specialAttack();

@@ -4,17 +4,9 @@ public class Charmander extends Pokemon
 {
     public Charmander()
     {
-        String[] moves = {"Ember", "Growl"};
+        super(39,52, 43, 60, 50, 65, "Fire", "Charmander");
+        addMove("Ember");
         System.out.println("Charmander!!!");
-        setPokemonName("Charmander");
-        setType("Fire");
-        setMoves(moves);
-        setHitPoints(39);
-        setAtack(52);
-        setDefense(43);
-        setSpecialAttack(60);
-        setSpecialDefense(50);
-        setSpeed(65);
     }
 
     public void specialAttack()

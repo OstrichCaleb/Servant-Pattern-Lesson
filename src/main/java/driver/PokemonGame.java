@@ -21,6 +21,7 @@ public class PokemonGame
         while (active)
         {
             createPokemon();
+            pokemon.addMove("Growl");
             if (active)
             {
                 pickAttackChoice();
@@ -34,9 +35,9 @@ public class PokemonGame
         askForAttackChoice();
         int choiceInt = getChoice() - 1;
         String pickedAttack = "";
-        if (choiceInt < pokemon.getMoves().length && choiceInt >= 0)
+        if (choiceInt < pokemon.getMoves().size() && choiceInt >= 0)
         {
-            pickedAttack = pokemon.getMoves()[choiceInt];
+            pickedAttack = pokemon.getMoves().get(choiceInt);
         }
 
         if (pickedAttack.equals("Growl"))
@@ -96,6 +97,7 @@ public class PokemonGame
             choiceInt = Integer.parseInt(choiceString);
         } catch (NumberFormatException e)
         {
+            System.out.println("Please enter a number listed");
         }
 
         return choiceInt;
